@@ -49,6 +49,7 @@ if ! command -v brew >/dev/null 2>&1; then
 fi
 source $HOME/.zshrc
 brew analytics off
+brew install zsh-autosuggestions zsh-syntax-highlighting fzf
 brew install git
 brew install openssl@3
 brew install gnupg yubikey-personalization ykman pinentry-mac
@@ -56,7 +57,6 @@ brew install coreutils jq fastfetch
 brew install fnm oven-sh/bun/bun
 brew install neovim
 brew install tldr
-brew install zsh-autosuggestions zsh-syntax-highlighting fzf
 brew install --cask iterm2
 brew install --cask commander-one
 brew install --cask dotnet-sdk
