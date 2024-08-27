@@ -65,7 +65,18 @@ brew install --cask stats
 brew install --cask firefox@developer-edition
 brew install --cask brave-browser
 brew install --cask raycast
+brew install --cask rectangle
 brew install rustup
+softwareupdate --install-rosetta --agree-to-license
+brew install --cask docker
+brew install --cask jetbrains-toolbox
+brew install --cask font-geist
+brew install --cask font-geist-mono
+brew install --cask font-geist-mono-nerd-font
+brew install --cask font-monaspace
+brew install --cask font-monaspace-nerd-font
+brew install --cask microsoft-remote-desktop
+brew install --cask hiddenbar
 
 source $HOME/.zshrc
 
