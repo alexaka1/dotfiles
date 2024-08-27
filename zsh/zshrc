@@ -16,7 +16,7 @@ PROMPT='%F{green}%T%f%F{blue}%~(%n%#)%f %F{red}${vcs_info_msg_0_}%f%F{magenta}%?
 
 # fnm
 export PATH="$HOME/Library/Application Support/fnm:$PATH"
-eval "`fnm env --corepack-enabled`"
+eval "$(fnm env --shell zsh)"
 
 # gpg
 export GPG_TTY="$(tty)"
@@ -26,4 +26,4 @@ gpgconf --launch gpg-agent
 # zsh plugins
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-eval "$(fzf --zsh)"
+source <(fzf --zsh)

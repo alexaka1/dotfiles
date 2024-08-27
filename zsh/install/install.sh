@@ -40,14 +40,37 @@ update_delimiters ~/.alexaka1/zsh/zshrc $HOME/.zshrc
 
 source $HOME/.zshrc
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#if ! command -v somecommand >/dev/null 2>&1; then
+#    installhere
+#fi
+
+if ! command -v brew >/dev/null 2>&1; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+source $HOME/.zshrc
+brew analytics off
+brew install git
+brew install openssl@3
+brew install gnupg yubikey-personalization ykman pinentry-mac
+brew install coreutils jq fastfetch
+brew install fnm oven-sh/bun/bun
+brew install neovim
+brew install tldr
+brew install zsh-autosuggestions zsh-syntax-highlighting fzf
+brew install --cask iterm2
+brew install --cask commander-one
+brew install --cask dotnet-sdk
+brew install --cask warp
+brew install --cask stats
+brew install --cask firefox@developer-edition
+brew install --cask brave-browser
+brew install --cask raycast
 
 source $HOME/.zshrc
 
-(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> $HOME/.zprofile
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-
-brew install --cask iterm2
-brew install --cask commander-one
-brew install coreutils
-brew install jq
+# then https://github.com/drduh/YubiKey-Guide?tab=readme-ov-file#copy-public-key
+if [[ ! -f "$HOME/.gnupg/gpg.conf" ]]; then
+    curl https://raw.githubusercontent.com/drduh/config/master/gpg.conf > $HOME/.gnupg/gpg.conf
+    curl https://raw.githubusercontent.com/drduh/config/master/gpg-agent.conf > $HOME/.gnupg/gpg-agent.conf
+    sed -i.bak 's|^pinentry-program .*|pinentry-program /usr/local/bin/pinentry-mac|' $HOME/.gnupg/gpg-agent.conf
+fi
