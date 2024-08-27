@@ -24,4 +24,9 @@ cd ~/.alexaka1/zsh
 chmod +x ./install/install.sh
 ./install/install.sh
 ```
+
 then restart your terminal.
+
+### Apps (Homebrew)
+
+Use `apps/homebrew/apps` to install any app you need. Look up what each app does before installing.

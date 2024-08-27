@@ -1,0 +1,29 @@
+brew install zsh-autosuggestions zsh-syntax-highlighting fzf
+brew install git
+brew install openssl@3
+brew install gnupg yubikey-personalization ykman pinentry-mac
+brew install coreutils jq fastfetch
+brew install fnm oven-sh/bun/bun
+brew install neovim
+brew install tldr
+brew install --cask iterm2
+brew install --cask commander-one
+brew install --cask dotnet-sdk
+brew install --cask warp
+brew install --cask stats
+brew install --cask firefox@developer-edition
+brew install --cask brave-browser
+brew install --cask raycast
+brew install --cask rectangle
+brew install rustup
+softwareupdate --install-rosetta --agree-to-license
+brew install --cask docker
+brew install --cask jetbrains-toolbox
+brew install --cask font-geist
+brew install --cask font-geist-mono
+brew install --cask font-geist-mono-nerd-font
+brew install --cask font-monaspace
+brew install --cask font-monaspace-nerd-font
+brew install --cask microsoft-remote-desktop
+brew install --cask hiddenbar
+brew install --cask obsidian
