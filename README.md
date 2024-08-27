@@ -12,5 +12,6 @@ cd ~/.alexaka1
 ### Zsh
 ```shell
 cd ~/.alexaka1/zsh
+chmod +x ./install/install.sh
 ./install/install.sh
 ```

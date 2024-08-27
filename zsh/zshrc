@@ -1,10 +1,13 @@
 if [[ -s $HOME/.alexaka1/zsh/aliases ]]; then
 	. $HOME/.alexaka1/zsh/aliases
 fi
-# Setup gnu dircolors
+export PATH="$PATH:$HOME/.dotnet/tools"
+# Setup gnu
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 eval $(gdircolors -b $HOME/.dircolors)
 export COLORTERM=$LS_COLORS
 
+# Shell prompt
 autoload -Uz vcs_info
 precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats '%b '
@@ -15,12 +18,12 @@ PROMPT='%F{green}%T%f%F{blue}%~(%n%#)%f %F{red}${vcs_info_msg_0_}%f%F{magenta}%?
 export PATH="$HOME/Library/Application Support/fnm:$PATH"
 eval "`fnm env --corepack-enabled`"
 
+# gpg
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
+# zsh plugins
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-export PATH="$PATH:$HOME/.dotnet/tools"
 eval "$(fzf --zsh)"

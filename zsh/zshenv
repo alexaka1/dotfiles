@@ -3,3 +3,5 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=true
 export DOTNET_NOLOGO=true
 export FNM_ARCH="arm64"
 export FNM_COREPACK_ENABLED=true
+export HOMEBREW_NO_AUTO_UPDATE=1
+export NVM_DIR="$HOME/.nvm"
