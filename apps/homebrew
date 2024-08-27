@@ -27,3 +27,4 @@ brew install --cask font-monaspace-nerd-font
 brew install --cask microsoft-remote-desktop
 brew install --cask hiddenbar
 brew install --cask obsidian
+brew install --cask github
