@@ -1,44 +1,42 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 
-update_file_with_delimiters() {
-    local source_file="$1"
-    local destination_file="$2"
+# Function to copy content from a source file to target file, between specific comments
+function update_delimiters {
+    # Declare local variables
+    local src_file="$1"
+    local target_file="$2"
+    local start_comment="#### copied from alexaka1's dotfiles - start"
+    local end_comment="#### copied from alexaka1's dotfiles - end"
 
-    # Read the content from the source file
-    local new_content=$(cat "$source_file")
-
-    # Check if the delimiters exist in the destination file
-    if grep -q "#### copied from alexaka1's dotfiles" "$destination_file"; then
-        # Replace the content between the delimiters
-        awk -v new_content="$new_content" '
-        BEGIN { found = 0 }
-        {
-            if ($0 == "#### copied from alexaka1'\''s dotfiles") {
-                print new_content
-                found = 1
-                while (getline > 0) {
-                    if ($0 == "#### copied from alexaka1'\''s dotfiles") {
-                        found = 0
-                        break
-                    }
-                }
-            }
-            if (found == 0) print
-        }
-        ' "$destination_file" > "$destination_file.tmp" && mv "$destination_file.tmp" "$destination_file"
-    else
-        # Append the content if the delimiters do not exist
-        echo -e "\n#### copied from alexaka1's dotfiles" >> "$destination_file"
-        echo -e "\n$new_content" >> "$destination_file"
-        echo -e "\n#### copied from alexaka1's dotfiles" >> "$destination_file"
+    # Check if the target file exists, create if it doesn't
+    if [[ ! -f "$target_file" ]]; then
+        touch "$target_file"
     fi
 
-    echo "The file '$destination_file' has been updated with content from '$source_file'."
+    # Read the content of the source file
+    local file_content
+    file_content=$(<"$src_file")
+
+    # Check if the target file contains the start and end comments
+    if grep -q "$start_comment" "$target_file"; then
+        # Replace the content between the comments
+        sed -i.bak -e "/$start_comment/,/$end_comment/{//!d;}" "$target_file"
+        sed -i.bak -e "/$start_comment/r /dev/stdin" "$target_file" <<<"$file_content"
+    else
+        # Append the content to the end of the file, between the comments
+        {
+            echo ""
+            echo "$start_comment"
+            echo "$file_content"
+            echo "$end_comment"
+            echo ""
+        } >> "$target_file"
+    fi
 }
 
-update_file_with_delimiters zprofile $HOME/.zprofile
-update_file_with_delimiters zshenv $HOME/.zshenv
-update_file_with_delimiters zshrc $HOME/.zshrc
+update_delimiters ~/.alexaka1/zsh/zprofile $HOME/.zprofile
+update_delimiters ~/.alexaka1/zsh/zshenv $HOME/.zshenv
+update_delimiters ~/.alexaka1/zsh/zshrc $HOME/.zshrc
 
 source $HOME/.zshrc
 
