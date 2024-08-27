@@ -1,0 +1,6 @@
+git config --global user.name "Alex Martossy"
+git config --global user.email "github@mail.martossy.hu"
+git config --global user.signingKey "0x4DF0E58F3A07826E"
+git config --global commit.gpgSign true
+git config --global push.gpgSign if-asked
+git config --global tag.gpgSign true

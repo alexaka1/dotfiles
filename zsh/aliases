@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+alias vim='nvim'
+alias ls='ls --color=auto'
+alias ll='ls -la'
+alias l.='ls -d .* --color=auto'
+alias sysinfo='fastfetch'
+alias grep='grep --color=auto'
+alias nvm='fnm'
