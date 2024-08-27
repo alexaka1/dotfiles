@@ -65,6 +65,7 @@ brew install --cask stats
 brew install --cask firefox@developer-edition
 brew install --cask brave-browser
 brew install --cask raycast
+brew install rust
 
 source $HOME/.zshrc
 
