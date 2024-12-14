@@ -3,6 +3,7 @@ brew install git
 brew install openssl@3
 brew install gnupg yubikey-personalization ykman pinentry-mac
 brew install coreutils jq fastfetch
+gdircolors -p > ~/.dircolors
 brew install fnm oven-sh/bun/bun
 brew install neovim
 brew install tldr
@@ -24,7 +25,7 @@ brew install --cask font-geist-mono
 brew install --cask font-geist-mono-nerd-font
 brew install --cask font-monaspace
 brew install --cask font-monaspace-nerd-font
-brew install --cask microsoft-remote-desktop
+brew install --cask windows-app
 brew install --cask hiddenbar
 brew install --cask obsidian
 brew install --cask github

@@ -54,7 +54,10 @@ source $HOME/.zshrc
 
 # then https://github.com/drduh/YubiKey-Guide?tab=readme-ov-file#copy-public-key
 if [[ ! -f "$HOME/.gnupg/gpg.conf" ]]; then
+    gpg -k
     curl https://raw.githubusercontent.com/drduh/config/master/gpg.conf > $HOME/.gnupg/gpg.conf
+    touch scdaemon.conf
+    echo "disable-ccid" >> scdaemon.conf
     curl https://raw.githubusercontent.com/drduh/config/master/gpg-agent.conf > $HOME/.gnupg/gpg-agent.conf
-    sed -i.bak 's|^pinentry-program .*|pinentry-program /usr/local/bin/pinentry-mac|' $HOME/.gnupg/gpg-agent.conf
+    sed -i.bak 's|^pinentry-program .*|pinentry-program /opt/homebrew/bin/pinentry-mac|' $HOME/.gnupg/gpg-agent.conf
 fi

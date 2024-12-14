@@ -4,7 +4,7 @@ fi
 export PATH="$PATH:$HOME/.dotnet/tools"
 # Setup gnu
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-eval $(gdircolors -b $HOME/.dircolors)
+test -r $HOME/.dircolors && eval $(gdircolors -b $HOME/.dircolors)
 export COLORTERM=$LS_COLORS
 
 # Shell prompt
