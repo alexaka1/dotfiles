@@ -4,3 +4,5 @@ git config --global user.signingKey "0x4DF0E58F3A07826E"
 git config --global commit.gpgSign true
 git config --global push.gpgSign if-asked
 git config --global tag.gpgSign true
+curl -s https://github.com/web-flow.gpg | gpg --import -
+gpg --local-user <YOURKEYID> --sign-key 0xB5690EEEBB952194
