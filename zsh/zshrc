@@ -17,6 +17,7 @@ PROMPT='%F{green}%T%f%F{blue}%~(%n%#)%f %F{red}${vcs_info_msg_0_}%f%F{magenta}%?
 # fnm
 export PATH="$HOME/Library/Application Support/fnm:$PATH"
 eval "$(fnm env --shell zsh)"
+export PATH="$PATH:$HOME/.fnm/aliases/default/bin"
 
 # gpg
 export GPG_TTY="$(tty)"
