@@ -8,3 +8,4 @@ export NVM_DIR="$HOME/.nvm"
 export DO_NOT_TRACK=1
 export NEXT_TELEMETRY_DISABLED=1
 export FNM_DIR="$HOME/.fnm"
+export AZURE_DEV_COLLECT_TELEMETRY="no"
