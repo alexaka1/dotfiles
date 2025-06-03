@@ -8,3 +8,13 @@ git config --global rerere.enabled true
 git config --global init.defaultBranch main
 curl -s https://github.com/web-flow.gpg | gpg --import -
 gpg --local-user <YOURKEYID> --sign-key 0xB5690EEEBB952194
+
+git config --global alias.stats "shortlog -sn --all --no-merges"
+git config --global alias.shortstats "shortlog -sn --since='10 weeks' --until='2 weeks'"
+git config --global alias.recent "for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short)'"
+git config --global alias.overview "log --all --since='2 weeks' --oneline --no-merges"
+git config --global alias.recap "log --all --oneline --no-merges --author=github@mail.martossy.hu"
+git config --global alias.today "log --since='midnight' --all --no-merges --oneline --author=github@mail.martossy.hu"
+git config --global alias.yesterday "log --since='yesterday.midnight' --until='midnight' --all --no-merges --oneline --author=github@mail.martossy.hu"
+git config --global alias.standup "log --since='yesterday.midnight' --all --no-merges --oneline --author=github@mail.martossy.hu"
+git config --global alias.graph "log --graph --all --decorate --stat --date=iso"
