@@ -8,6 +8,10 @@ git config --global rerere.enabled true
 git config --global init.defaultBranch main
 curl -s https://github.com/web-flow.gpg | gpg --import -
 gpg --local-user <YOURKEYID> --sign-key 0xB5690EEEBB952194
+# https://bun.sh/guides/install/git-diff-bun-lockfile
+echo "*.lockb binary diff=lockb" >> .gitattributes
+git config --global diff.lockb.textconv bun
+git config --global diff.lockb.binary true
 
 git config --global alias.stats "shortlog -sn --all --no-merges"
 git config --global alias.shortstats "shortlog -sn --since='10 weeks' --until='2 weeks'"
