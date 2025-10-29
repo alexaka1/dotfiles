@@ -22,3 +22,12 @@ git config --global alias.today "log --since='midnight' --all --no-merges --onel
 git config --global alias.yesterday "log --since='yesterday.midnight' --until='midnight' --all --no-merges --oneline --author=github@mail.martossy.hu"
 git config --global alias.standup "log --since='yesterday.midnight' --all --no-merges --oneline --author=github@mail.martossy.hu"
 git config --global alias.graph "log --graph --all --decorate --stat --date=iso"
+
+git config --global core.editor nvim
+git config --global branch.sort -committerdate
+git config --global column.ui auto
+git config --global fetch.prune true
+git config --global fetch.writeCommitGraph true
+
+# mac, windows
+git config --global core.fsmonitor true
