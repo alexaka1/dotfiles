@@ -33,3 +33,4 @@ brew install --cask windows-app
 brew install --cask jordanbaird-ice
 brew install --cask obsidian
 brew install --cask github
+brew install --cask cmux
