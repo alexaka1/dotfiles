@@ -10,10 +10,7 @@ brew install tldr
 brew install --cask ghostty
 brew install --cask iterm2
 brew install --cask commander-one
-brew install --cask dotnet-sdk
-# supports older dotnet versions along with the latest from above
-brew tap isen-ng/dotnet-sdk-versions
-brew install --cask dotnet-sdk8
+curl -fsSL https://aka.ms/dotnet/dotnetup/preview/get-dotnetup.sh | bash
 brew install --cask warp
 brew install --cask stats
 brew install --cask firefox@developer-edition
@@ -22,7 +19,7 @@ brew install --cask raycast
 brew install --cask rectangle
 brew install rustup
 softwareupdate --install-rosetta --agree-to-license
-brew install --cask docker
+# install docker from website
 brew install --cask jetbrains-toolbox
 brew install --cask font-geist
 brew install --cask font-geist-mono
@@ -30,7 +27,7 @@ brew install --cask font-geist-mono-nerd-font
 brew install --cask font-monaspace
 brew install --cask font-monaspace-nerd-font
 brew install --cask windows-app
-brew install --cask jordanbaird-ice
+brew install thaw
 brew install --cask obsidian
 brew install --cask github
 brew install --cask cmux
